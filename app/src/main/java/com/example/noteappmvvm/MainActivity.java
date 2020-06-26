@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements
         notes.remove(note);
         noteAdapter.notifyDataSetChanged();
 
+        noteRepository.deleteNote(note);
+
     }
 
     private ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(

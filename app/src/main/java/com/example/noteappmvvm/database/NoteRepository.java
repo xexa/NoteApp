@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.noteappmvvm.asynctask.DeleteNoteTask;
 import com.example.noteappmvvm.asynctask.InsertNoteTask;
 import com.example.noteappmvvm.model.Note;
 
@@ -24,6 +25,7 @@ public class NoteRepository {
     }
 
     public void deleteNote(Note note) {
+        new DeleteNoteTask(noteDAO).execute(note);
     }
 
     public void updateNote(Note note) {

@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity implements
         recyclerView = findViewById(R.id.recycler_view);
 
         findViewById(R.id.fab).setOnClickListener(this);
+
         initRecyclerView();
+        noteRepository = new NoteRepository(this);
+
+        retrieveNotes();
 
         Toolbar toolbar = findViewById(R.id.note_toolbar);
 
         setActionBar(toolbar);
-
-        noteRepository = new NoteRepository(this);
-
-        retrieveNotes();
 
 
         setTitle("Notes");
